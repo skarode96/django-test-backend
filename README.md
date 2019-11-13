@@ -5,7 +5,7 @@ This repository contains the code that one would eventually have were they to go
 [![CircleCI](https://circleci.com/gh/skarode96/django-test-backend.svg?style=svg)](https://circleci.com/gh/skarode96/django-test-backend)
 ## Differences
 
-Expressing my authorial rights, some things are a bit different from the tutorial:
+Expressing my authorial rights, some things are a bit different from the tutorial :
 
 - A `Log in` and `Log out` links on the page header
 - A `Back` link within the *blog-detail* and *blog-edit* pages
