@@ -17,7 +17,7 @@ jobs:
             python3 -m venv venv && . venv/bin/activate
             pip install -r requirements.txt
             python manage.py migrate
-            echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin')" | python manage.py shell
+            | python manage.py shell
             - save_cache:
                 key: deps1-{{ .Branch }}-{{ checksum "requirements.txt" }}
                 paths:
