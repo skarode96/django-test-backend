@@ -2,11 +2,10 @@
 
 This repository contains the code that one would eventually have were they to go through the [Django Girls tutorial](https://tutorial.djangogirls.org/en/).
 
-[![CircleCI](https://circleci.com/gh/NdagiStanley/django_girls_complete.svg?style=svg)](https://circleci.com/gh/NdagiStanley/django_girls_complete)
-
+[![CircleCI](https://circleci.com/gh/skarode96/django-test-backend.svg?style=svg)](https://circleci.com/gh/skarode96/django-test-backend)
 ## Differences
 
-Expressing my authorial rights, some things are a bit different from the tutorial:
+Expressing my authorial rights, some things are a bit different from the tutorial :
 
 - A `Log in` and `Log out` links on the page header
 - A `Back` link within the *blog-detail* and *blog-edit* pages
