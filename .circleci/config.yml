@@ -20,17 +20,16 @@ jobs: # A basic unit of work in a run
       - run: sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
       - restore_cache:
           # Read about caching dependencies: https://circleci.com/docs/2.0/caching/
-          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          key: deps9-{{ .Branch }}-{{ checksum "requirements.txt" }}
       - run:
           command: |
-            sudo apt-get install binutils libproj-dev gdal-bin
             python3 -m venv venv && . venv/bin/activate
             pip install -r requirements.txt
             python manage.py makemigrations
             python manage.py migrate
             echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin')" | python manage.py shell
       - save_cache: # cache Python dependencies using checksum of Pipfile as the cache-key
-          key: deps9-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          key: deps9-{{ .Branch }}-{{ checksum "requirements.txt" }}
           paths:
             - ".venv"
             - "/usr/local/bin"
@@ -39,7 +38,7 @@ jobs: # A basic unit of work in a run
           name: Running tests
           command: |
             . venv/bin/activate
-            python manage.py test
+            python3 manage.py test
       - store_test_results: # Upload test results for display in Test Summary: https://circleci.com/docs/2.0/collect-test-data/
           path: test-results
       - store_artifacts: # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
