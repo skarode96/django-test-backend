@@ -1,2 +1,2 @@
-release: python manage.py migrate && echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin')" | python manage.py shell
+release: python manage.py migrate
 web: gunicorn mysite.wsgi --log-file -
